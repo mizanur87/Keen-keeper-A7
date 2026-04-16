@@ -5,8 +5,8 @@ import { Link } from "react-router";
 
 const Navbar = () => {
   return (
-    <div>
-      <div className="navbar bg-base-100 shadow-sm">
+    <div className=" navbar bg-base-100 shadow-sm">
+      <div className="container mx-auto">
         <div className="navbar-start">
           {/* {Mobile menus} */}
           {/* <div className="dropdown">
@@ -77,13 +77,13 @@ const Navbar = () => {
             </li>
           </ul>
         </div> */}
-        <div className="navbar-end space-x-.5">
+        <div className="navbar-end ">
           <NavLink
             to={"/"}
             className={({ isActive }) =>
               isActive
                 ? "btn text-white bg-[#244d3fFF] p-5"
-                : "btn text-gray-600"
+                : " btn bg-none text-gray-600 border-transparent"
             }
           >
             <House />
@@ -93,7 +93,7 @@ const Navbar = () => {
             className={({ isActive }) =>
               isActive
                 ? "btn text-white bg-[#244d3fFF] p-5"
-                : "btn text-gray-600"
+                : "btn text-gray-600 bg-none border-transparent"
             }
             to={"/Timeline"}
           >
@@ -103,7 +103,7 @@ const Navbar = () => {
             className={({ isActive }) =>
               isActive
                 ? "btn text-white bg-[#244d3fFF] p-5"
-                : "btn text-gray-600"
+                : "btn text-gray-600 bg-none border-transparent"
             }
             to={"/Stats"}
           >
