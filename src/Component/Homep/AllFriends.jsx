@@ -11,9 +11,11 @@ const AllFriends = () => {
   return (
     <div className="my-10 container mx-auto">
       <h2 className="font-bold text-3xl text-center">Friends</h2>
-      {friends.map((friend, index) => (
-        <SingleCardFriend key={index} friend={friend}></SingleCardFriend>
-      ))}
+      <div className="grid grid-cols-1 gap-1 md:grid-cols-3 gap-10">
+        {friends.map((friend, index) => (
+          <SingleCardFriend key={index} friend={friend}></SingleCardFriend>
+        ))}
+      </div>
     </div>
   );
 };
