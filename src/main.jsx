@@ -8,6 +8,8 @@ import ErrorPage from "./Pages/Error Page/ErrorPage";
 import Timeline from "./Pages/Timeline/Timeline";
 import Stats from "./Pages/Stats/Stats";
 import FriendDetail from "./Pages/FriendDetail/FriendDetail";
+import FriendContext from "./Context/FriendProvider";
+import FriendProvider from "./Context/FriendProvider";
 // import App from "./App.jsx";
 
 const router = createBrowserRouter([
@@ -36,6 +38,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <FriendProvider>
+      <RouterProvider router={router} />
+    </FriendProvider>
   </StrictMode>,
 );

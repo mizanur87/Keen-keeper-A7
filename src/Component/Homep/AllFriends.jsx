@@ -1,9 +1,7 @@
 import React, { use } from "react";
 import SingleCardFriend from "./SingleCardFriend";
 
-const friendsPromise = fetch("/public/friendsData.json").then((res) =>
-  res.json(),
-);
+const friendsPromise = fetch("/friendsData.json").then((res) => res.json());
 
 const AllFriends = () => {
   const friends = use(friendsPromise);
@@ -11,7 +9,7 @@ const AllFriends = () => {
   return (
     <div className="my-10 container mx-auto">
       <h2 className="font-bold text-3xl text-center">Friends</h2>
-      <div className="grid grid-cols-1 gap-1 md:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 gap-1 md:grid-cols-4 gap-10">
         {friends.map((friend, index) => (
           <SingleCardFriend key={index} friend={friend}></SingleCardFriend>
         ))}

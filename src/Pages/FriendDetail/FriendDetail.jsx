@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { useContext, useState } from "react";
 import { useLoaderData, useParams } from "react-router";
 import {
   BellRing,
@@ -9,6 +9,7 @@ import {
   Video,
   Pencil,
 } from "lucide-react";
+import { FriendContext } from "../../Context/FriendContext";
 
 // const friendsPromise = fetch("/public/friendsData.json").then((res) =>
 //   res.json(),
@@ -38,6 +39,17 @@ const FriendDetail = () => {
     status,
     relation,
   } = expectedFriend;
+
+  const friendContext = useContext(FriendContext);
+
+  console.log(friendContext);
+
+  const [call, SetCall] = useState([]);
+
+  const handleCall = (id) => {
+    // console.log("This is the book id", id);
+    SetCall([...call, id]);
+  };
 
   return (
     <div>
@@ -137,7 +149,10 @@ const FriendDetail = () => {
                 Quick Check-In
               </h3>
               <div className="grid grid-cols-3 gap-4">
-                <button className="flex flex-col items-center justify-center p-6 bg-[#f8fafc] hover:bg-[#f1f5f9] border border-slate-200 rounded-xl transition-all group">
+                <button
+                  onClick={() => handleCall(id)}
+                  className="flex flex-col items-center justify-center p-6 bg-[#f8fafc] hover:bg-[#f1f5f9] border border-slate-200 rounded-xl transition-all group"
+                >
                   <Phone className="w-6 h-6 mb-2 text-slate-600 group-hover:text-[#244d3f]" />
                   <span className="text-sm font-semibold text-slate-600">
                     Call
